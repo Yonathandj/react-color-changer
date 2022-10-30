@@ -4,8 +4,9 @@ import ShowColor from "./components/ShowColor";
 
 function App() {
 
-  const [Color, setColor] = useState("");
+  const [color, setColor] = useState("");
   const [colorHex, setColorHex] = useState("");
+  const [colorText, setColorText] = useState(true);
 
   const inputRef = useRef()
   useEffect(() => {
@@ -15,13 +16,16 @@ function App() {
   return (
     <div className="App">
       <ShowColor 
-        Color={Color}
+        color={color}
         colorHex={colorHex}
+        colorText={colorText}
         />
       <SetColor 
+        color={color} 
+        colorText={colorText}
         setColor={setColor} 
-        Color={Color} 
         setColorHex={setColorHex}
+        setColorText={setColorText}
         inputRef={inputRef}/>
     </div>
   );
