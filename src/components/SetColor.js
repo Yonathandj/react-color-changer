@@ -6,8 +6,9 @@ const SetColor = ({ setColor, color, inputRef, setColorHex, colorText, setColorT
     <form onSubmit={(e) => e.preventDefault()}>
       <label htmlFor="setColor">Add color name</label>
       <input
-        id='setColor'
         type="text" 
+        id='setColor'
+        autoComplete='off'
         placeholder="Add color name"
         value={color}
         ref={inputRef}
