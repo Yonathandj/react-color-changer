@@ -8,7 +8,7 @@ function App() {
   const inputRef = useRef()
   useEffect(() => {
     inputRef.current.focus();
-  })
+  }, [])
 
   return (
     <div className="App">
