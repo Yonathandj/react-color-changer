@@ -1,6 +1,7 @@
 import React from 'react'
+import colorNames from 'colornames';
 
-const SetColor = ({ setColor, Color, inputRef }) => {
+const SetColor = ({ setColor, Color, inputRef, setColorHex }) => {
   return (
     <div>
       <input
@@ -8,7 +9,10 @@ const SetColor = ({ setColor, Color, inputRef }) => {
         placeholder="Add color name"
         value={Color}
         ref={inputRef}
-        onChange={(e) => setColor(e.target.value)}
+        onChange={(e) => {
+          setColor(e.target.value);
+          setColorHex(colorNames(e.target.value))
+        }}
       />
     </div>
   )

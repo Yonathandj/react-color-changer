@@ -4,7 +4,9 @@ import ShowColor from "./components/ShowColor";
 
 function App() {
 
-  const [Color, setColor] = useState("")
+  const [Color, setColor] = useState("");
+  const [colorHex, setColorHex] = useState("");
+
   const inputRef = useRef()
   useEffect(() => {
     inputRef.current.focus();
@@ -12,8 +14,15 @@ function App() {
 
   return (
     <div className="App">
-      <ShowColor Color={Color}/>
-      <SetColor setColor={setColor} Color={Color} inputRef={inputRef}/>
+      <ShowColor 
+        Color={Color}
+        colorHex={colorHex}
+        />
+      <SetColor 
+        setColor={setColor} 
+        Color={Color} 
+        setColorHex={setColorHex}
+        inputRef={inputRef}/>
     </div>
   );
 }

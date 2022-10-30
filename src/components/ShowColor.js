@@ -1,14 +1,14 @@
 import React from 'react'
 
-const ShowColor = ({ Color }) => {
+const ShowColor = ({ Color, colorHex }) => {
   const backgroundColor = {
-    backgroundColor: Color ? `${Color}` : null,
+    backgroundColor: Color
   }
   return (
-    <div 
-      className='color-box'
-      style={backgroundColor}>
-        { Color === "" ? "Empty Color" : `${Color}` } </div>
+    <div className='color-box' style={backgroundColor}>
+        <p>{ Color ? Color : "Empty Color" }</p>
+        <p>{ colorHex ? colorHex : null }</p>
+    </div>
   )
 }
 
